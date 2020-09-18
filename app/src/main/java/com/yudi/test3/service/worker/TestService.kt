@@ -25,7 +25,7 @@ class TestService : Service() {
     private var mLocationManager: LocationManager? = null
 
     private lateinit var timer: CountDownTimer
-    val timerCount: Long = 6000 // 1 minute
+    val timerCount: Long = 60000 // 1 minute
 
     companion object {
         var myLocation: Location? = null

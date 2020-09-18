@@ -1,19 +1,17 @@
 package com.yudi.test3.app.ui.fragment
 
-import android.Manifest
 import android.content.Context
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
 import com.yudi.test3.R
 import com.yudi.test3.app.base.BaseFragment
 import com.yudi.test3.app.common.Common
+import com.yudi.test3.app.common.GpsUtils
 import com.yudi.test3.databinding.TestServiceFragmentBinding
 import com.yudi.test3.service.eventbus.EventbusLocation
 import com.yudi.test3.service.worker.TestService
@@ -28,6 +26,9 @@ import org.greenrobot.eventbus.ThreadMode
 class TestServiceFragment: BaseFragment() {
     private lateinit var binding: TestServiceFragmentBinding
     private lateinit var mContext: Context
+
+    private var isPermissionGPS: Boolean = false
+    private var isGPS: Boolean = false
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle? ): View? {
         binding = DataBindingUtil.inflate<TestServiceFragmentBinding>(inflater, R.layout.test_service_fragment, container, false).apply {}
@@ -45,17 +46,36 @@ class TestServiceFragment: BaseFragment() {
     }
 
     private fun permissionCheck() {
-        activity?.let { Common.checkLocationPermission(it) }
+        activity?.let { isPermissionGPS = Common.checkLocationPermission(it) }
     }
 
     private fun buttonListener() {
         binding.btnStart.setOnClickListener() {
-            mContext.startService(Intent(mContext, TestService::class.java))
+            startService()
         }
 
         binding.btnStop.setOnClickListener() {
             binding.btnStart.isEnabled = true
             mContext.stopService(Intent(mContext, TestService::class.java))
+        }
+    }
+
+    private fun startService() {
+        permissionCheck()
+        turnOnGPS()
+        mContext.startService(Intent(mContext, TestService::class.java))
+
+//        if(isPermissionGPS) {
+//            if(isGPS) mContext.startService(Intent(mContext, TestService::class.java))
+//            else turnOnGPS()
+//        } else {
+//            permissionCheck()
+//        }
+    }
+
+    private fun turnOnGPS() {
+        GpsUtils(mContext).turnGPSOn { isGPSEnable -> // turn on GPS
+            isGPS = isGPSEnable
         }
     }
 

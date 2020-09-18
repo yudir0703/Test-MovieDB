@@ -11,4 +11,8 @@ object Constant {
 
     const val CONNECTIVITY_ON   = "Online Kembali"
     const val CONNECTIVITY_OFF  = "Kamu Sedang Offline"
+
+
+    const val LOCATION_REQUEST = 1000
+    const val GPS_REQUEST = 1001
 }
