@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/login_container_nav"
-    app:startDestination="@id/fragMain">
+    app:startDestination="@id/fragTest2Menu">
 
     <fragment
         android:id="@+id/fragMain"
@@ -49,11 +49,36 @@
 
     </fragment>
 
+    <!-- Test 2 -->
+    <fragment
+        android:id="@+id/fragTest2Menu"
+        android:name="com.yudi.test3.app.ui.fragment.MenuTest2Fragment">
+
+        <action
+            android:id="@+id/action_to_test1"
+            app:destination="@id/fragTest1"
+            app:enterAnim="@anim/enter_fade_in"
+            app:exitAnim="@anim/enter_fade_out" />
+
+        <action
+            android:id="@+id/action_to_test2"
+            app:destination="@id/fragTest2"
+            app:enterAnim="@anim/enter_fade_in"
+            app:exitAnim="@anim/enter_fade_out" />
+
+    </fragment>
+
     <fragment
         android:id="@+id/fragTest1"
         android:name="com.yudi.test3.app.ui.fragment.PseudocodeFragment">
 
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragTest2"
+        android:name="com.yudi.test3.app.ui.fragment.TestServiceFragment">
 
     </fragment>
+    <!-- [End] Test 2 -->
 
 </navigation>

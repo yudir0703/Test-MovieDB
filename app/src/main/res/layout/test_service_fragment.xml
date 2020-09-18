@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nv_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="@dimen/values_medium">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/overpass_regular"
+                android:gravity="center"
+                android:text="@string/tv_label_sample_5"
+                android:textColor="@color/colorTextGrey"
+                android:textSize="@dimen/font_regular_large" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/values_large"
+                android:background="@color/colorWhite"
+                android:orientation="horizontal"
+                android:padding="@dimen/values_small">
+
+                <Button
+                    android:id="@+id/btn_start"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/values_small"
+                    android:layout_weight="1"
+                    android:background="@drawable/rect_bg"
+                    android:backgroundTint="@color/colorButton2"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:minHeight="0dp"
+                    android:padding="@dimen/values_regular"
+                    android:text="@string/btn_label_start"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/font_regular_medium"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/btn_stop"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/values_small"
+                    android:layout_weight="1"
+                    android:background="@drawable/rect_bg"
+                    android:backgroundTint="@color/colorRed"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:minHeight="0dp"
+                    android:padding="@dimen/values_regular"
+                    android:text="@string/btn_label_stop"
+                    android:textColor="@android:color/white"
+                    android:textSize="@dimen/font_regular_medium"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_output_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/values_large"
+                android:background="@android:drawable/editbox_background"
+                android:fontFamily="@font/overpass_regular"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:padding="@dimen/values_regular"
+                android:text="@string/tv_label_sample_1"
+                android:textColor="@color/colorTextGrey"
+                android:textSize="@dimen/font_regular" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

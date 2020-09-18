@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#95a5a6"
+            android:padding="@dimen/values_medium">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/overpass_regular"
+                android:text="@string/tv_label_sample_3"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_large" />
+
+            <Button
+                android:id="@+id/btn_check"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/values_regular"
+                android:background="@drawable/rect_bg"
+                android:backgroundTint="@color/colorButton2"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:minHeight="0dp"
+                android:padding="@dimen/values_regular_"
+                android:text="@string/btn_label_next_page"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/font_regular_medium"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#7f8c8d"
+            android:padding="@dimen/values_medium">
+
+            <TextView
+                android:id="@+id/tv_title_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:fontFamily="@font/overpass_regular"
+                android:text="@string/tv_label_sample_4"
+                android:textColor="@color/colorWhite"
+                android:textSize="@dimen/font_large" />
+
+            <Button
+                android:id="@+id/btn_check_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="@dimen/values_regular"
+                android:background="@drawable/rect_bg"
+                android:backgroundTint="@color/colorButton1"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:minHeight="0dp"
+                android:padding="@dimen/values_regular_"
+                android:text="@string/btn_label_next_page"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/font_regular_medium"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+    </LinearLayout>
+</layout>

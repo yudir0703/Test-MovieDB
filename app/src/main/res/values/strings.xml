@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Test Movies</string>
+    <string name="app_name">Test-JDS-2</string>
     <string name="api_url_category">http://private-eecc18-yudi2.apiary-mock.com/category</string>
 
     <string name="login_error_title">Unknown Error</string>
@@ -31,6 +31,9 @@
     <!-- Buttons -->
     <string name="btn_label_status">Following</string>
     <string name="btn_label_check">Check</string>
+    <string name="btn_label_start">Start</string>
+    <string name="btn_label_stop">Stop</string>
+    <string name="btn_label_next_page">Next Page</string>
 
     <!-- Labels -->
     <string name="tv_label_result">Results</string>
@@ -49,6 +52,9 @@
     <string name="tv_label_sample_0">Silahkan input dibawah</string>
     <string name="tv_label_sample_1">Output : </string>
     <string name="tv_label_sample_2">Output : \nKata terdiri dari %1$d jumlah karakter \nKata terdiri dari %2$d jumlah vocal \nKata terdiri dari %3$d jumlah konsonan</string>
+    <string name="tv_label_sample_3">Test Algoritma</string>
+    <string name="tv_label_sample_4">Test Service</string>
+    <string name="tv_label_sample_5">Test Service - Get My Location</string>
 
     <!-- Nav -->
     <string name="nav_header_desc">Navigation header</string>

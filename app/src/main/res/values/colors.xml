@@ -15,6 +15,9 @@
     <color name="colorGreySoft">#EEEEEE</color>
     <color name="colorGreySoft2">#EFEFEF</color>
     <color name="colorGreySoft3">#b0b0b0</color>
+    
+    <color name="colorButton1">#27ae60</color>
+    <color name="colorButton2">#16a085</color>
 
     <color name="colorTextSecondary">#273D52</color>
     <color name="colorTextGrey">#6E6E6E</color>
