@@ -1,0 +1,60 @@
+<resources>
+    <string name="app_name">Test Movies</string>
+    <string name="api_url_category">http://private-eecc18-yudi2.apiary-mock.com/category</string>
+
+    <string name="login_error_title">Unknown Error</string>
+    <string name="login_error_message">Failed get data</string>
+
+    <string name="home_data_kosong_1">Data kosong</string>
+    <string name="home_data_kosong_2">Gagal mendapatkan data</string>
+
+    <string name="action_ok">OK</string>
+    <string name="action_cancel">Batal</string>
+
+    <string name="toolbar_title_1">Test GridView</string>
+
+    <!-- Nav Menu -->
+    <string name="nav_label_menu_1">Trending</string>
+    <string name="nav_label_menu_2">Now Playing</string>
+    <string name="nav_label_menu_3">Upcoming</string>
+    <string name="nav_label_menu_4">Popular</string>
+    <string name="nav_label_menu_5">Settings</string>
+    <string name="nav_label_menu_6">About</string>
+    <string name="nav_label_menu_7">Privacy Policy</string>
+
+    <!-- Toolbar -->
+    <string name="toolbar_search_hint">Search</string>
+
+    <!-- Tabs -->
+    <string name="tab_title_0">0</string>
+
+    <!-- Buttons -->
+    <string name="btn_label_status">Following</string>
+    <string name="btn_label_check">Check</string>
+
+    <!-- Labels -->
+    <string name="tv_label_result">Results</string>
+    <string name="tv_label_log_failed_data_load_tag">Gagal Load Data</string>
+    <string name="tv_label_overview">Overview</string>
+    <string name="tv_label_homepage">Homepage</string>
+    <string name="tv_label_status">Status</string>
+    <string name="tv_label_runtime">Runtime</string>
+    <string name="tv_label_spoken_languages">Spoken Languages</string>
+    <string name="tv_label_revenue">Revenue</string>
+
+    <!-- Hint -->
+    <string name="et_hint_test_1">Contoh: Qwerty Uiop</string>
+    <string name="et_hint_test_2">Jelajah Data Semesta</string>
+
+    <string name="tv_label_sample_0">Silahkan input dibawah</string>
+    <string name="tv_label_sample_1">Output : </string>
+    <string name="tv_label_sample_2">Output : \nKata terdiri dari %1$d jumlah karakter \nKata terdiri dari %2$d jumlah vocal \nKata terdiri dari %3$d jumlah konsonan</string>
+
+    <!-- Nav -->
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="nav_header_title">Yudi Rahmat</string>
+    <string name="nav_header_subtitle">test3@gmail.com</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+</resources>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_container_nav"
+    app:startDestination="@id/fragMain">
+
+    <fragment
+        android:id="@+id/fragMain"
+        android:name="com.yudi.test3.app.ui.fragment.MenuFragment">
+
+        <action
+            android:id="@+id/action_fragMovie_to_fragDetail"
+            app:destination="@id/fragDetail"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/fragDetail"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragMovie"
+        android:name="com.yudi.test3.app.ui.fragment.MoviesFragment">
+
+        <action
+            android:id="@+id/action_fragMovie_to_fragDetail"
+            app:destination="@id/fragDetail"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragDetail"
+        android:name="com.yudi.test3.app.ui.fragment.MovieDetailFragment">
+
+        <action
+            android:id="@+id/action_fragDetail_to_fragMovie"
+            app:destination="@id/fragMovie"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out" />
+
+        <action
+            android:id="@+id/action_fragDetail_to_fragMain"
+            app:destination="@id/fragMain"
+            app:launchSingleTop="true"
+            app:popUpTo="@+id/fragMain"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragTest1"
+        android:name="com.yudi.test3.app.ui.fragment.PseudocodeFragment">
+
+
+    </fragment>
+
+</navigation>

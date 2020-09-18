@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/colorGreySoft"
+            android:orientation="vertical"
+            android:padding="@dimen/values_medium">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/overpass_regular"
+                android:text="@string/tv_label_sample_0"
+                android:textColor="@color/colorTextGrey"
+                android:textSize="@dimen/font_regular" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_data_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/et_hint_test_1"
+                android:maxLength="100"
+                android:inputType="text"
+                android:maxLines="1"
+                android:textSize="@dimen/font_regular" />
+
+            <Button
+                android:id="@+id/btn_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/rect_bg"
+                android:backgroundTint="@color/colorPrimaryDark"
+                android:minHeight="0dp"
+                android:paddingLeft="@dimen/values_medium2"
+                android:paddingTop="@dimen/values_regular"
+                android:paddingRight="@dimen/values_medium2"
+                android:paddingBottom="@dimen/values_regular"
+                android:text="@string/btn_label_check"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/font_regular_small"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_output_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/values_medium"
+                android:background="@android:drawable/editbox_background"
+                android:fontFamily="@font/overpass_regular"
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:padding="@dimen/values_regular"
+                android:text="@string/tv_label_sample_1"
+                android:textColor="@color/colorTextGrey"
+                android:textSize="@dimen/font_regular" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="@dimen/values_medium">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/overpass_regular"
+                android:text="@string/tv_label_sample_0"
+                android:textColor="@color/colorTextGrey"
+                android:textSize="@dimen/font_regular" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/et_data_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/et_hint_test_2"
+                android:maxLength="100"
+                android:maxLines="1"
+                android:textSize="@dimen/font_regular" />
+
+            <Button
+                android:id="@+id/btn_check_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/rect_bg"
+                android:backgroundTint="@color/colorAccent"
+                android:minHeight="0dp"
+                android:paddingLeft="@dimen/values_medium2"
+                android:paddingTop="@dimen/values_regular"
+                android:paddingRight="@dimen/values_medium2"
+                android:paddingBottom="@dimen/values_regular"
+                android:text="@string/btn_label_check"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/font_regular_small"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_output_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/values_medium"
+                android:background="@android:drawable/editbox_background"
+                android:fontFamily="@font/overpass_regular"
+                android:lineSpacingExtra="@dimen/_2sdp"
+                android:padding="@dimen/values_regular"
+                android:text="@string/tv_label_sample_1"
+                android:textColor="@color/colorTextGrey"
+                android:textSize="@dimen/font_regular" />
+        </LinearLayout>
+
+    </LinearLayout>
+</layout>

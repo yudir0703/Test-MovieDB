@@ -1,0 +1,117 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "com.yudi.test3"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+    flavorDimensions "api"
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            buildConfigField "String", "BASE_URL", PRD_PORTAL_BASE_URL
+            buildConfigField "String", "BASE_IMG_URL", PRD_BASE_IMG_URL
+        }
+
+        debug {
+            buildConfigField "String", "BASE_URL", PRD_PORTAL_BASE_URL
+            buildConfigField "String", "BASE_IMG_URL", PRD_BASE_IMG_URL
+        }
+
+        stag {
+            debuggable true
+            applicationIdSuffix '.staging'
+            versionNameSuffix "-staging"
+
+            buildConfigField "String", "BASE_URL", STG_PORTAL_BASE_URL
+            buildConfigField "String", "BASE_IMG_URL", STG_BASE_IMG_URL
+        }
+    }
+}
+
+dependencies {
+    def nav_version         = "2.2.1"
+    def koin_version        = "2.0.1"
+    def ssp_sdp_version     = "1.0.6"
+    def multidex_version    = "2.0.1"
+    def support_ver         = '28.0.0'
+    def glide_ver           = "4.4.0"
+    def versions_work       = "2.3.4"
+
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    // Multidex
+    implementation "androidx.multidex:multidex:$multidex_version"
+
+    // Android support
+    implementation 'com.google.android.material:material:1.2.0-alpha04'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.45'
+    implementation "com.android.support:design:$support_ver"
+    kapt 'com.android.databinding:compiler:3.1.4'
+
+    // Image
+    implementation 'io.github.ivanespitiac:imageslider:1.0.3'
+    implementation "com.github.bumptech.glide:glide:$glide_ver"
+    kapt "com.github.bumptech.glide:compiler:$glide_ver"
+
+    // DI Koin
+    implementation "org.koin:koin-android:$koin_version"
+    implementation "org.koin:koin-androidx-viewmodel:$koin_version"
+
+    // SDP SSP
+    implementation "com.intuit.ssp:ssp-android:$ssp_sdp_version"
+    implementation "com.intuit.sdp:sdp-android:$ssp_sdp_version"
+
+    // RxAndroid
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.2.15'
+
+    // Network
+    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+    implementation 'com.squareup.retrofit2:converter-jackson:2.7.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.3.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.3.1'
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+}
