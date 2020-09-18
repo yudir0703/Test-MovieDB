@@ -26,6 +26,7 @@ class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView<BaseContainerBinding>(this, R.layout.base_container)
         connectivityMonitor(this)
+
     }
 
     private fun connectivityMonitor(activity: Activity) {

@@ -18,7 +18,7 @@ import com.yudi.test3.R
 object Common {
 
     /** The loading progress dialog object */
-    val MY_PERMISSIONS_REQUEST_LOCATION = 99;
+    const val MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
     fun checkLocationPermission(activity: Activity): Boolean {
         if (ContextCompat.checkSelfPermission(activity,

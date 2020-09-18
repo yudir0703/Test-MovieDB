@@ -1,12 +1,15 @@
 package com.yudi.test3.app.ui.fragment
 
+import android.Manifest
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import androidx.databinding.DataBindingUtil
 import com.yudi.test3.R
 import com.yudi.test3.app.base.BaseFragment
@@ -31,6 +34,7 @@ class TestServiceFragment: BaseFragment() {
 
         initToolbar()
         buttonListener()
+        permissionCheck()
 
         return binding.root
     }
@@ -40,19 +44,25 @@ class TestServiceFragment: BaseFragment() {
         (activity as? AppCompatActivity)?.supportActionBar?.title = "Test JDS"
     }
 
+    private fun permissionCheck() {
+        activity?.let { Common.checkLocationPermission(it) }
+    }
+
     private fun buttonListener() {
         binding.btnStart.setOnClickListener() {
             mContext.startService(Intent(mContext, TestService::class.java))
         }
 
         binding.btnStop.setOnClickListener() {
+            binding.btnStart.isEnabled = true
             mContext.stopService(Intent(mContext, TestService::class.java))
         }
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
     fun onMessageEvent(event: EventbusLocation?) {
-        binding.tvOutput.append("\n" + event?.latitude)
+        binding.btnStart.isEnabled = false
+        binding.tvOutput.append("\nLat : " + event?.latitude + ", Long : " + event?.longitude)
     }
 
     override fun onAttach(context: Context) {
