@@ -10,9 +10,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.yudi.test3.R
 import com.yudi.test3.app.base.BaseFragment
-import com.yudi.test3.app.common.navigateTo
+import com.yudi.test3.app.common.Common
 import com.yudi.test3.databinding.TestServiceFragmentBinding
+import com.yudi.test3.service.eventbus.EventbusLocation
 import com.yudi.test3.service.worker.TestService
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
+import org.greenrobot.eventbus.ThreadMode
 
 
 /**
@@ -46,9 +50,24 @@ class TestServiceFragment: BaseFragment() {
         }
     }
 
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    fun onMessageEvent(event: EventbusLocation?) {
+        binding.tvOutput.append("\n" + event?.latitude)
+    }
+
     override fun onAttach(context: Context) {
         super.onAttach(context)
 
         mContext = context
+    }
+
+    override fun onStart() {
+        super.onStart()
+        EventBus.getDefault().register(this)
+    }
+
+    override fun onStop() {
+        super.onStop()
+        EventBus.getDefault().unregister(this)
     }
 }

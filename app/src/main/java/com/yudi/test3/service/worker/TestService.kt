@@ -6,6 +6,8 @@ import android.os.CountDownTimer
 import android.os.IBinder
 import android.util.Log
 import com.yudi.test3.app.common.Constant.TAG
+import com.yudi.test3.service.eventbus.EventbusLocation
+import org.greenrobot.eventbus.EventBus
 
 /**
  * Created by Yudi Rahmat
@@ -13,13 +15,20 @@ import com.yudi.test3.app.common.Constant.TAG
 class TestService : Service() {
     private lateinit var timer: CountDownTimer
     var value: Int = 1
-    val timerCount: Long = 60000 // 1 minute
+    val timerCount: Long = 6000 // 1 minute
 
     override fun onCreate() {
         super.onCreate()
         Log.i(TAG, "Service onCreate")
 
         runTimer()
+    }
+
+    private fun setEventBus(latitude: Long) {
+        val data = EventbusLocation()
+        data.latitude = latitude
+
+        EventBus.getDefault().post(data)
     }
 
     private fun runTimer() {
@@ -35,6 +44,7 @@ class TestService : Service() {
     }
 
     private fun sendMyLocation() {
+        setEventBus(value.toLong())
         Log.i(TAG, "data123 -- $value")
         runTimer()
         value++

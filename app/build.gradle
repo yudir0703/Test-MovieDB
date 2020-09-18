@@ -58,6 +58,12 @@ android {
     }
 }
 
+kapt {
+    arguments {
+        arg('eventBusIndex', 'com.yudi.test3.MyEventBusIndex')
+    }
+}
+
 dependencies {
     def nav_version         = "2.2.1"
     def koin_version        = "2.0.1"
@@ -110,6 +116,10 @@ dependencies {
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.6.2'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.3.1'
     implementation 'com.squareup.okhttp3:okhttp:4.3.1'
+
+    // Eventbus
+    implementation "org.greenrobot:eventbus:3.0.0"
+    kapt 'org.greenrobot:eventbus-annotation-processor:3.0.1'
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
