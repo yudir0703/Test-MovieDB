@@ -10,7 +10,7 @@ data class MovieDetailResponse(
     @field:JsonProperty("backdrop_path")
     var backdropPath: String? = null,
     @field:JsonProperty("belongs_to_collection")
-    var belongsToCollection: String? = null,
+    var belongsToCollection: BelongsToCollection? = null,
     @field:JsonProperty("budget")
     var budget: Int? = null,
     @field:JsonProperty("genres")
